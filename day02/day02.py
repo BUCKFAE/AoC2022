@@ -2,12 +2,6 @@ from __future__ import annotations
 
 from enum import Enum
 
-
-class Move(Enum):
-    ROCK = 1
-    PAPER = 2
-    SCISSORS = 3
-
 with open('day02/input.txt') as f:
     data = f.read().splitlines()
 
