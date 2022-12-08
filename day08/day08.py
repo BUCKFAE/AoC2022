@@ -56,12 +56,10 @@ class Grid:
             dir_score = 0
             while len(self.get_neighbors(current[0], current[1])) > 3:
                 current = (current[0] + dir[0], current[1] + dir[1])
+                dir_score += 1
 
-                if own_height > self.get_height(current[0], current[1]):
-                    dir_score += 1
-                else:
+                if own_height <= self.get_height(current[0], current[1]):
                     break
-            print(f'Direction {dir} has score {dir_score}')
             score *= max(1, dir_score)
         return score
 
@@ -94,8 +92,6 @@ if __name__ == '__main__':
 
     sample_grid = create_grid('day08/sample_input.txt')
 
-    print(sample_grid.get_all_coordinates())
-
     # Getting neighbors
     assert sorted(sample_grid.get_neighbors(0, 0)) == [0, 2]
     assert sorted(sample_grid.get_neighbors(0, 1)) == [3, 5, 6]
@@ -110,6 +106,7 @@ if __name__ == '__main__':
 
     # Tree score
     assert sample_grid.get_tree_score(2, 1) == 4, f'Expected 4, got {sample_grid.get_tree_score(2, 1)}'
+    assert sample_grid.get_tree_score(2, 3) == 8, f'Expected 8, got {sample_grid.get_tree_score(2, 1)}'
 
     # Solving sample inputs
     res_sample = solve('day08/sample_input.txt')
