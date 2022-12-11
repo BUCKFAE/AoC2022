@@ -3,7 +3,7 @@ import unittest
 from day10.day10 import solve, simulate_cycles
 
 
-class TestDay09(unittest.TestCase):
+class TestDay10(unittest.TestCase):
 
     def test_task1_sample_input_01(self):
         self.assertEqual(solve('day10/sample_input.txt')[0], 13140)
