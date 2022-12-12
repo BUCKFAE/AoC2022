@@ -34,3 +34,15 @@ class TestDay10(unittest.TestCase):
         print(f'Actual:\n{res}')
 
         self.assertEqual(res, img)
+
+    def test_task1_input_01(self):
+        self.assertEqual(solve('day10/input.txt')[0], 13680)
+
+    def test_task2_input_01(self):
+        res = """###..####..##..###..#..#.###..####.###..
+#..#....#.#..#.#..#.#.#..#..#.#....#..#.
+#..#...#..#....#..#.##...#..#.###..###..
+###...#...#.##.###..#.#..###..#....#..#.
+#....#....#..#.#....#.#..#....#....#..#.
+#....####..###.#....#..#.#....####.###.."""
+        self.assertEqual(solve('day10/input.txt')[1], res)

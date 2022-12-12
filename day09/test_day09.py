@@ -21,3 +21,9 @@ class TestDay09(unittest.TestCase):
         self.assertTrue(are_adjacent((0, 0), (1, 1)))
 
         self.assertFalse(are_adjacent((0, 0), (2, 0)))
+
+    def test_task1_input_01(self):
+        self.assertEqual(solve('day09/input.txt', 2), 6090)
+
+    def test_task2_input_01(self):
+        self.assertEqual(solve('day09/input.txt', 10), 2566)
